@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap');
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+ul[role='list'],
+ol[role='list'] {
+    color: var(--clr-primary-nutmeg);
+    font-family: var(--ff-primary);
+    margin-left: 2em;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root{
+
+    --fs: 1em;
+
+    --ff-heading: "Young Serif", serif;
+    --ff-primary: "Outfit", sans-serif;
+
+    --fw-heading: 400;
+
+    --fw-400: 400;
+    --fw-600: 600;
+    --fw-700: 700;
+    
+    --clr-primary-nutmeg: hsl(14, 45%, 36%);
+    --clr-primary-dark-raspberry: hsl(332, 51%, 32%);
+
+    --clr-neutral-white: hsl(0, 0%, 100%);
+    --clr-neutral-rose-white: hsl(330, 100%, 98%);
+    --clr-neutral-egg-shell: hsl(30, 54%, 90%);
+    --clr-neutral-light-grey: hsl(30, 18%, 87%);
+    --clr-neutral-wenge-brown: hsl(30, 10%, 34%);
+    --clr-neutral-dark-charcoal: hsl(24, 5%, 18%);
+}
+
+h1{
+    color: var(--clr-neutral-dark-charcoal);
+    font-weight: var(--fw-400);
+    font-family: var(--ff-heading);
+    font-size: 2em;
+}
+
+h2{
+    color: var(--clr-primary-nutmeg);
+    font-weight: var(--fw-400);
+    font-family: var(--ff-heading);
+}
+
+.text{
+    color: var(--clr-neutral-wenge-brown);
+    font-family: var(--ff-primary);
+}
+
+.text-title{
+    font-weight: var(--fw-700);
+    font-family: var(--ff-primary);
+    color: var(--clr-neutral-wenge-brown);
+}
+
+.number{
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-700);
+    color: var(--clr-primary-nutmeg);
+}
+
+h3{
+    color: var(--clr-primary-dark-raspberry);
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-600);
+}
+
+.line{
+    min-width: 100%;
+    height: .5px;
+    opacity: .2;
+    background-color: var(--clr-primary-nutmeg);
+}
+/* Styling */
+body{
+    font-family: var(--ff-heading), var(--ff-primary);
+    font-size: var(--fs);
+    background-color: var(--clr-neutral-egg-shell);
+    display: flex;
+    padding: 5em 0;
+}
+
+.recipe-container{
+    background-color: var(--clr-neutral-white);
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding: 2em;
+    border-radius: 4vh;
+    max-width: 60%;
+    margin-inline: auto;
+}
+
+img{
+    border-radius: 4vh;
+}
+
+.preparation-container{
+    border-radius: 1vh;
+    background: var(--clr-neutral-rose-white);
+    padding: 10px 20px;
+}
+
+.preparation-container h3 ~ * {
+    margin-right: 3em;
+    margin-inline: center;
+}
+
+ol, ul{
+    display: grid;
+    gap: 1em;
+}
+
+table{
+    min-width: 100%;
+    border-collapse: collapse;
+}
+
+table tr:last-child{
+    border-bottom: 0;
+}
+
+td{
+    padding: .5em .7em;
+}
+
+tr{
+    border-bottom: 1px solid var(--clr-neutral-egg-shell);
+}
+
+@media (width<=375px){
+    body{
+        padding: 0;
+    }
+    
+    .recipe-container{
+        max-width: 100%;
+        border-radius: 0;
+    }
+    img{
+        border-radius: 0;
+        inset: 0;
+        position: absolute;
+        min-width: 100%;
+    }
+    h1{
+        margin-top: 5em;
+        text-align: center;
+    }
+}
